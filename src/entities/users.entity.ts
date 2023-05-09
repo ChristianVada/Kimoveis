@@ -1,11 +1,16 @@
 import {
+  BeforeInsert,
+  BeforeUpdate,
   Column,
   CreateDateColumn,
+  DeleteDateColumn,
   Entity,
   OneToMany,
   PrimaryGeneratedColumn,
 } from "typeorm"
 import Schedules from "./schedules.entity"
+import * as bcrypt from "bcryptjs"
+import { getRounds, hashSync } from "bcryptjs"
 
 @Entity("users")
 class User {
@@ -24,17 +29,27 @@ class User {
   @Column({ type: "varchar", length: 120 })
   password: string
 
-  @CreateDateColumn()
-  createdAt: Date
+  @CreateDateColumn({ type: "date" })
+  createdAt: Date | string
 
-  @CreateDateColumn()
-  updatedAt: Date
+  @CreateDateColumn({ type: "date" })
+  updatedAt: Date | string
 
-  @CreateDateColumn({ nullable: true })
-  deletedAt: Date
+  @DeleteDateColumn({ nullable: true })
+  deletedAt?: Date
 
   @OneToMany(() => Schedules, (schedules) => schedules.user)
   schedules: Schedules[]
+
+  @BeforeInsert()
+  @BeforeUpdate()
+  hashPassword() {
+    const isEncrypted: number = getRounds(this.password)
+
+    if (!isEncrypted) {
+      this.password = bcrypt.hashSync(this.password, 10)
+    }
+  }
 }
 
 export default User
