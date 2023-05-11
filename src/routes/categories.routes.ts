@@ -1,12 +1,30 @@
 import { Router } from "express"
-import { ensureIsAdmin } from "../middlewares"
+import {
+  ensureBodyisValid,
+  ensureCategoryNotExists,
+  ensureIsAdmin,
+  ensureTokenIsValid,
+} from "../middlewares"
+import { SchemaCategoryReq } from "../schemas/category.schemas"
+import {
+  createCategoryController,
+  readCategoryController,
+  readEstateByCategoryIdController,
+} from "../controllers"
 
 const categoriesRoutes: Router = Router()
 
-categoriesRoutes.post("", ensureIsAdmin)
+categoriesRoutes.post(
+  "",
+  ensureTokenIsValid,
+  ensureIsAdmin,
+  ensureBodyisValid(SchemaCategoryReq),
+  ensureCategoryNotExists,
+  createCategoryController
+)
 
-categoriesRoutes.get("")
+categoriesRoutes.get("", readCategoryController)
 
-categoriesRoutes.get("/:id/realEstate")
+categoriesRoutes.get("/:id/realEstate", readEstateByCategoryIdController)
 
 export default categoriesRoutes

@@ -7,11 +7,11 @@ import { SchemaUsersRes } from "../../schemas/users.schemas"
 const createUsersService = async (userData: IUserReq): Promise<IUserRes> => {
   const userRepository: Repository<User> = AppDataSource.getRepository(User)
 
-  const userResponse = userRepository.create(userData)
+  const userCreate = userRepository.create(userData)
 
-  await userRepository.save(userResponse)
+  await userRepository.save(userCreate)
 
-  const validateRes = SchemaUsersRes.parse(userResponse)
+  const validateRes = SchemaUsersRes.parse(userCreate)
 
   return validateRes
 }

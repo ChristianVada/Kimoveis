@@ -4,10 +4,20 @@ import loginUsersService from "./sessions/loginUsers.service"
 import updateUsersService from "./users/updateUsers.service"
 import deleteUsersService from "./users/deleteUsers.service"
 
+import createCategoryService from "./categories/createCategories.service"
+import readCategoryService from "./categories/readCategories.service"
+import readEstateByCategoryIdService from "./categories/readEstateByCategoryId.service"
+
+import createRealEstateService from "./realEstates/createRealEstate.service"
+
 export {
   createUsersService,
   readAllUsersService,
   loginUsersService,
   updateUsersService,
   deleteUsersService,
+  createCategoryService,
+  readCategoryService,
+  readEstateByCategoryIdService,
+  createRealEstateService,
 }

@@ -31,7 +31,6 @@ const loginUsersService = async (
   const token = jwt.sign(
     {
       email: userResponse.email,
-      id: userResponse.id,
       admin: userResponse.admin,
     },
     process.env.SECRET_KEY!,
