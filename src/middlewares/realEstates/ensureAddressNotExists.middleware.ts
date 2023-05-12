@@ -10,10 +10,6 @@ const ensureAddressNotExists = async (
   next: NextFunction
 ): Promise<Response | void> => {
   const address = req.body.address
-  console.log(
-    "🚀 ~ file: ensureAddressNotExists.middleware.ts:13 ~ address:",
-    address
-  )
 
   if (address) {
     const AddressSearch: Repository<Address> =
@@ -22,10 +18,6 @@ const ensureAddressNotExists = async (
     const findAddress: Address | null = await AddressSearch.findOne({
       where: address,
     })
-    console.log(
-      "🚀 ~ file: ensureAddressNotExists.middleware.ts:21 ~ findAddress:",
-      findAddress
-    )
 
     if (findAddress) {
       throw new AppError("Address already exists", 409)

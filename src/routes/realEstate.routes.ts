@@ -1,5 +1,8 @@
 import { Router } from "express"
-import { createRealEstateController } from "../controllers"
+import {
+  createRealEstateController,
+  readRealEstateController,
+} from "../controllers"
 import {
   ensureAddressNotExists,
   ensureBodyisValid,
@@ -18,5 +21,7 @@ realEstateRoutes.post(
   ensureAddressNotExists,
   createRealEstateController
 )
+
+realEstateRoutes.get("", readRealEstateController)
 
 export default realEstateRoutes

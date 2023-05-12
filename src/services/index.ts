@@ -9,6 +9,9 @@ import readCategoryService from "./categories/readCategories.service"
 import readEstateByCategoryIdService from "./categories/readEstateByCategoryId.service"
 
 import createRealEstateService from "./realEstates/createRealEstate.service"
+import readRealEstateService from "./realEstates/readRealEstate.service"
+
+import createScheduleService from "./schedules/createSchedule.service"
 
 export {
   createUsersService,
@@ -20,4 +23,6 @@ export {
   readCategoryService,
   readEstateByCategoryIdService,
   createRealEstateService,
+  readRealEstateService,
+  createScheduleService,
 }

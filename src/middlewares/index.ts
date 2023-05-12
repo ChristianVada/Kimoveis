@@ -9,6 +9,11 @@ import ensureCategoryNotExists from "./categories/ensureCategoryNotExists.middle
 
 import ensureAddressNotExists from "./realEstates/ensureAddressNotExists.middleware"
 
+import ensureIdRealEstateExists from "./schedules/ensureIdRealEstateExists.middleware"
+import ensureDateAndHourNotExists from "./schedules/ensureDateAndHourNotExists.middleware"
+import ensureUserScheduleNotExits from "./schedules/ensureUserScheduleNotExits.middleware"
+import ensureDataAndHourIsValid from "./schedules/ensureDateAndHourIsValid.middleware"
+
 export {
   ensureEmailNotExists,
   ensureBodyisValid,
@@ -18,4 +23,8 @@ export {
   ensureIsAdminOrSelf,
   ensureCategoryNotExists,
   ensureAddressNotExists,
+  ensureIdRealEstateExists,
+  ensureDateAndHourNotExists,
+  ensureUserScheduleNotExits,
+  ensureDataAndHourIsValid,
 }

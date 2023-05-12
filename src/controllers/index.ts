@@ -9,6 +9,9 @@ import readCategoryController from "./categories/readCategory.controller"
 import readEstateByCategoryIdController from "./categories/readEstateByCategoryId.controller"
 
 import createRealEstateController from "./realEstates/createRealEstate.controller"
+import readRealEstateController from "./realEstates/readRealEstate.controller"
+
+import createScheduleController from "./schedules/createSchedule.controller"
 
 export {
   createUsersController,
@@ -20,4 +23,6 @@ export {
   readCategoryController,
   readEstateByCategoryIdController,
   createRealEstateController,
+  readRealEstateController,
+  createScheduleController,
 }
