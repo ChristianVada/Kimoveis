@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { ensureBodyisValid, ensureIsAdmin } from "../middlewares"
+import { ensureBodyisValid } from "../middlewares"
 import SchemaLogin from "../schemas/login.shemas"
 import { loginUsersController } from "../controllers"
 

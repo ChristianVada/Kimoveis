@@ -12,6 +12,7 @@ import createRealEstateService from "./realEstates/createRealEstate.service"
 import readRealEstateService from "./realEstates/readRealEstate.service"
 
 import createScheduleService from "./schedules/createSchedule.service"
+import readScheduleByRealEstateService from "./schedules/readScheduleByRealEstate.service"
 
 export {
   createUsersService,
@@ -25,4 +26,5 @@ export {
   createRealEstateService,
   readRealEstateService,
   createScheduleService,
+  readScheduleByRealEstateService,
 }

@@ -1,6 +1,6 @@
 import createUsersController from "./users/createUsers.controller"
 import readAllUsersController from "./users/readAllUsers.controller"
-import loginUsersController from "./users/loginUsers.controller"
+import loginUsersController from "./sessions/loginUsers.controller"
 import updateUsersController from "./users/updateUsers.controller"
 import deleteUsersController from "./users/deleteUsers.controller"
 
@@ -12,6 +12,7 @@ import createRealEstateController from "./realEstates/createRealEstate.controlle
 import readRealEstateController from "./realEstates/readRealEstate.controller"
 
 import createScheduleController from "./schedules/createSchedule.controller"
+import readScheduleByRealEstateController from "./schedules/readScheduleByRealEstate.controller"
 
 export {
   createUsersController,
@@ -25,4 +26,5 @@ export {
   createRealEstateController,
   readRealEstateController,
   createScheduleController,
+  readScheduleByRealEstateController,
 }

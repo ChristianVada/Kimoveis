@@ -1,10 +1,15 @@
 import { Router } from "express"
-import { createScheduleController } from "../controllers"
+import {
+  createScheduleController,
+  readScheduleByRealEstateController,
+} from "../controllers"
 import {
   ensureBodyisValid,
   ensureDataAndHourIsValid,
   ensureDateAndHourNotExists,
+  ensureIdByParamsExists,
   ensureIdRealEstateExists,
+  ensureIsAdmin,
   ensureTokenIsValid,
   ensureUserScheduleNotExits,
 } from "../middlewares"
@@ -23,6 +28,12 @@ schedulesRoutes.post(
   createScheduleController
 )
 
-schedulesRoutes.get("/realEstate/:id")
+schedulesRoutes.get(
+  "/realEstate/:id",
+  ensureTokenIsValid,
+  ensureIsAdmin,
+  ensureIdByParamsExists,
+  readScheduleByRealEstateController
+)
 
 export default schedulesRoutes

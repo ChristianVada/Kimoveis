@@ -1,5 +1,4 @@
 import { Request, Response } from "express"
-import { IUserRes } from "../../interfaces/users.interfaces"
 import { readAllUsersService } from "../../services"
 
 const readAllUsersController = async (

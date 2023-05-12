@@ -1,8 +1,5 @@
 import { NextFunction, Request, Response } from "express"
 import { AppError } from "../../error"
-import { Repository } from "typeorm"
-import { User } from "../../entities"
-import { AppDataSource } from "../../data-source"
 
 const ensureIsAdmin = async (
   req: Request,

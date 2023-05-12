@@ -10,7 +10,7 @@ const createScheduleController = async (
 
   const userId = Number(res.locals.decoded.sub)
 
-  const newData = await createScheduleService(scheduleData, userId)
+  await createScheduleService(scheduleData, userId)
 
   return res.status(201).json({ message: "Schedule created" })
 }

@@ -13,6 +13,7 @@ import ensureIdRealEstateExists from "./schedules/ensureIdRealEstateExists.middl
 import ensureDateAndHourNotExists from "./schedules/ensureDateAndHourNotExists.middleware"
 import ensureUserScheduleNotExits from "./schedules/ensureUserScheduleNotExits.middleware"
 import ensureDataAndHourIsValid from "./schedules/ensureDateAndHourIsValid.middleware"
+import ensureIdByParamsExists from "./schedules/ensureIdByParamsExists.middleware"
 
 export {
   ensureEmailNotExists,
@@ -27,4 +28,5 @@ export {
   ensureDateAndHourNotExists,
   ensureUserScheduleNotExits,
   ensureDataAndHourIsValid,
+  ensureIdByParamsExists,
 }

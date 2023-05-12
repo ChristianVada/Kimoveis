@@ -2,6 +2,7 @@ import { NextFunction, Request, Response } from "express"
 import { AppError } from "../../error"
 import jwt from "jsonwebtoken"
 import "dotenv/config"
+
 const ensureTokenIsValid = (
   req: Request,
   res: Response,
